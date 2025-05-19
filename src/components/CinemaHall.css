@@ -1,0 +1,44 @@
+/* ќсновний контейнер дл€ розм≥щенн€ м≥сць у с≥тку */
+.cinema {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* —тиль дл€ одного м≥сц€ (доступне) */
+.seat {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #4caf50; /* «елений Ч доступне м≥сце */
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+    /* —тиль дл€ вибраного м≥сц€ */
+    .seat.selected {
+        background-color: #2196f3; /* —ин≥й Ч вибране */
+    }
+
+    /* —тиль дл€ заброньованого м≥сц€ */
+    .seat.booked {
+        background-color: #d32f2f; /* „ервоний */
+        cursor: not-allowed; /*  урсор показуЇ, що не можна кл≥кнути */
+        opacity: 0.7;
+    }
+
+    /* јн≥мац≥€ при наведенн≥ */
+    .seat:hover {
+        transform: scale(1.1);
+    }
+
+/* јдаптивн≥сть дл€ моб≥льних пристроњв */
+@media (max-width: 600px) {
+    .cinema {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
